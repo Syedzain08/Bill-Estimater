@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li>
+          <a class="link" href="/">Use Watts Instead!</a>
+        </li>
+
+        <li>
+          <a class="link" href="ampsandvolts.html"
+            >Use Amps And Volts Instead!</a
+          >
+        </li>
+      </ul>
+    </header>
+    <main class="wrapper">
+      <h1>Monthly Electricity Bill Estimater</h1>
+      <div class="form-wrapper">
+        <form method="POST" autocomplete="off" class="form" id="form-1">
+          <div class="item">
+            <label for="amps"><strong>Kilowatts:</strong></label>
+            <input
+              class="input-box"
+              type="number"
+              placeholder="Kilowatts"
+              name="kwatt"
+              step="any"
+            />
+          </div>
+          <div class="item">
+            <label for="hours_used"><strong>Hours Used Daily:</strong></label>
+            <input
+              class="input-box"
+              type="number"
+              placeholder="Hours Used"
+              name="hours_used"
+              step="any"
+            />
+          </div>
+          <div class="item">
+            <label for="fixed_tax"><strong>Fixed Tax:</strong></label>
+            <input
+              class="input-box"
+              type="number"
+              placeholder="Fixed Tax"
+              name="fixed_tax"
+              step="any"
+            />
+          </div>
+          <div class="item">
+            <label for="electricity_cost"
+              ><strong>Electricity Cost:</strong></label
+            >
+            <input
+              class="input-box"
+              type="number"
+              placeholder="Electricity Cost"
+              name="electricity_cost"
+              step="any"
+            />
+          </div>
+        </form>
+        <div class="results">
+          <button type="submit" form="form-1" class="submit-btn">Submit</button>
+          <div class="result-text-container">
+            {% if result %} {% for line in result.split('\n') %}
+            <p>{{ line }}</p>
+            {% endfor %} {% endif %}
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+body {
+    background-color: #1C1C1C;
+}
+
+h1, label, p, .link {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+p {
+    font-size: 24px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-top: 5px;
+}
+
+li::marker {
+    display: none;
+    
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.from-wrapper {
+    display: flex;
+    align-items: start;
+}
+
+.form {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+label {
+    font-size: 30px;
+}
+
+.input-box {
+    font-size: 24px;
+    field-sizing: content;
+}
+
+.results {
+    margin-top: 30px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.results-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-btn {
+    padding: 5px;
+    color: black;
+    width: 100px;
+    min-height: 50px;
+    max-height: 50px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+}
